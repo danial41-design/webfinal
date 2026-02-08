@@ -1,0 +1,47 @@
+body {
+    font-family: system-ui, Arial;
+    margin: 0;
+    background: #0b0f17;
+    color: #e8eefc;
+}
+
+.container {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 16px;
+}
+
+.card {
+    background: #121a2b;
+    padding: 16px;
+    border-radius: 12px;
+    margin: 12px 0;
+}
+
+input,
+textarea,
+button {
+    width: 100%;
+    padding: 10px;
+    margin: 8px 0;
+    border-radius: 10px;
+    border: 1px solid #2a3a5a;
+    background: #0e1422;
+    color: #e8eefc;
+}
+
+button {
+    cursor: pointer;
+    background: #2d5bff;
+    border: none;
+}
+
+button:hover {
+    opacity: 0.9;
+}
+
+@media (max-width: 600px) {
+    .container {
+        padding: 12px;
+    }
+}

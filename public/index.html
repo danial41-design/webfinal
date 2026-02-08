@@ -1,0 +1,45 @@
+<!doctype html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Task Manager</title>
+    <link rel="stylesheet" href="styles.css" />
+</head>
+
+<body>
+    <main class="container">
+        <h1>Task Manager</h1>
+
+        <section class="card">
+            <h2>Login</h2>
+            <form id="loginForm">
+                <input name="email" type="email" placeholder="Email" required />
+                <input name="password" type="password" placeholder="Password (min 6)" minlength="6" required />
+                <button type="submit">Login</button>
+            </form>
+            <p id="loginMsg"></p>
+        </section>
+
+        <section class="card">
+            <h2>Create task</h2>
+            <form id="taskForm">
+                <input name="title" placeholder="Title" required maxlength="80" />
+                <textarea name="description" placeholder="Description (optional)"></textarea>
+                <button type="submit">Create</button>
+            </form>
+            <p id="taskMsg"></p>
+        </section>
+
+        <section class="card">
+            <h2>My tasks</h2>
+            <button id="loadTasks">Load tasks</button>
+            <ul id="tasksList"></ul>
+        </section>
+    </main>
+
+    <script src="app.js"></script>
+</body>
+
+</html>

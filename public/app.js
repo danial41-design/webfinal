@@ -1,6 +1,35 @@
 const API = "/api";
 let token = localStorage.getItem("token") || "";
 
+document.getElementById("registerForm")?.addEventListener("submit", async (e) => {
+    e.preventDefault();
+
+    const form = e.target;
+    const username = form.username.value.trim();
+    const email = form.email.value.trim();
+    const password = form.password.value;
+
+    const msg = document.getElementById("registerMsg");
+    msg.textContent = "";
+
+    try {
+        const res = await fetch(`${API}/auth/register`, {
+            method: "POST",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify({ username, email, password })
+        });
+
+        const data = await res.json();
+        if (!res.ok) throw new Error(data.message || "Register failed");
+
+        msg.textContent = "Registered successfully. Now login.";
+        form.reset();
+    } catch (err) {
+        msg.textContent = err.message;
+    }
+});
+
+
 function authHeaders() {
     return token ? { Authorization: `Bearer ${token}` } : {};
 }
